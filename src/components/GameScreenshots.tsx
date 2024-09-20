@@ -1,4 +1,4 @@
-import { Image, SimpleGrid, Spinner } from "@chakra-ui/react";
+import { Image, SimpleGrid } from "@chakra-ui/react";
 import useScreenshots from "../hooks/useScreenshots";
 
 interface Props {
@@ -8,7 +8,7 @@ interface Props {
 const GameScreenshots = ({ gameId }: Props) => {
   const { data, isLoading, error } = useScreenshots(gameId);
 
-  if (isLoading) return <Spinner />;
+  if (isLoading) return null;
 
   if (error) throw error;
 
